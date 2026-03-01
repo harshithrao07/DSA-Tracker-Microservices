@@ -1,0 +1,1 @@
+web: java -jar target/dsa-question-picker-0.0.1-SNAPSHOT.jar
