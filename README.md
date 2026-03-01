@@ -24,7 +24,7 @@
  ```mermaid
  graph TD
      UserClient[User/Client] -->|HTTP| Backend[DSA-Tracker Backend]
-    Backend -->|OpenFeign (REST)| Autofill[Autofill Service]
+     Backend -->|REST| Autofill[Autofill Service]
      Backend -->|produce events| Kafka[(Kafka)]
      Kafka -->|consume events| Notification[Notification Service]
      Backend -->|MongoDB Driver| MongoDB[(MongoDB)]
@@ -119,7 +119,7 @@
  
  ### Synchronous (HTTP/REST)
  - Client → Backend: public APIs.
-- Backend → Autofill: OpenFeign (REST) for enrichment.
+ - Backend → Autofill: REST calls for enrichment.
  - Service discovery: logical hostnames resolved via Eureka; fall back to environment URLs in local/dev as needed.
  
  ### Asynchronous (Kafka)
